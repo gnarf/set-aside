@@ -22,4 +22,6 @@ class Foo {
 }
 
 setAside.afterSet(Foo.prototype, 'data', function() { this.triggerRender(); });
+
+new Foo().data = 'foo'; // logs 'trigger!'
 ```
