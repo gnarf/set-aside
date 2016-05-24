@@ -4,7 +4,7 @@ const hasWeakMap = typeof WeakMap !== 'undefined';
 
 const map = hasWeakMap ? new WeakMap() : (function() {
   const {defineProperty} = Object;
-  const key = '__vizGPMSideData__';
+  const key = '__setAsideData__';
 
   return {
     set(obj, value) {
