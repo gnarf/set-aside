@@ -1,6 +1,6 @@
 {
   "name": "set-aside",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Using a side storage (`WeakMap`) to create property setter hooks on an object.",
   "main": "index.js",
   "scripts": {
