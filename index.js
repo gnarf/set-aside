@@ -52,15 +52,14 @@ function sideSet(obj, key, {before, after} = {}) {
   defineProperty(obj, key, {
     get: oldGet ? oldGet : function() { return sideStore(this)[key]; },
     set: function(value) {
-      const priv = sideStore(this);
-      const current = priv[key];
+      const current = this[key];
       if (before) {
         before.call(this, value, current, this);
       }
       if (oldPropDescriptor && oldPropDescriptor.set) {
         oldPropDescriptor.set.call(this, value);
       } else {
-        priv[key] = value;
+        sideStore(this)[key] = value;
       }
       if (after) {
         after.call(this, value, current, this);
